@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]> <html class="no-js ie6" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js ie7" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js ie8" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!-->  <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	
+	<title>An Introduction to Programming</title>
+	
+	<meta name="viewport" content="width=1024, user-scalable=no">
+	
+	<!-- Core and extension CSS files -->
+	<link rel="stylesheet" href="core/deck.core.css">
+	<link rel="stylesheet" href="extensions/goto/deck.goto.css">
+	<link rel="stylesheet" href="extensions/menu/deck.menu.css">
+	<link rel="stylesheet" href="extensions/navigation/deck.navigation.css">
+	<link rel="stylesheet" href="extensions/status/deck.status.css">
+	<link rel="stylesheet" href="extensions/hash/deck.hash.css">
+	<link rel="stylesheet" href="extensions/scale/deck.scale.css">
+	<link rel="stylesheet" href="extensions/codemirror/deck.codemirror.css">
+	<link rel="stylesheet" href="extensions/codemirror/themes/default.css">
+
+	<!-- Style theme. More available in /themes/style/ or create your own. -->
+	<link rel="stylesheet" href="themes/style/swiss-custom.css">
+	
+	<!-- Transition theme. More available in /themes/transition/ or create your own. -->
+	<link rel="stylesheet" href="themes/transition/horizontal-slide.css">
+
+	<style type="text/css">
+		.notes {display:none;}
+		.notes {display:block; font-size: 0.5em; color: red;}
+		.deck-container .slide .CodeMirror { margin-bottom: 20px; }
+	</style>
+	
+	<script src="modernizr.custom.js"></script>
+</head>
+
+<body class="deck-container">
+
+<!-- Begin slides -->
+<section class="slide" id="title-slide">
+	<h1>An Introduction to Programming</h1>
+</section>
+
+
+<!--
+<section class="slide" id="outcomes">
+	<h2>Learning outcomes</h2>
+		<ul>
+			<li>
+				<h3>An understanding the relationship between code and </h3>
+				<p>Instructions written in a formal <strong>artifical language</strong> to manipulate the ones and zeros which are the language of the computer hardware.</p>
+				<span class='notes'>As scripts or text files that the computer understands.</span>
+			</li>
+			<li>
+				<h3>Artificial Language</h3>s
+				<p>Albeit artificial they are constructed with our own 'natural' language in mind.</p>
+			</li>
+		</ul>
+
+</section>
+-->
+
+<section class="slide" id="programming-languages">
+	<h2>Programming languages</h2>
+		<ul>
+			<li>
+				<h3>Ones and Zeros</h3>
+				<p>Instructions written in a formal <strong>artifical language</strong> to manipulate the ones and zeros which are the language of the computer hardware.</p>
+				<span class='notes'>As scripts or text files that the computer understands.</span>
+			</li>
+			<li>
+				<h3>Artificial Language</h3>
+				<p>Albeit artificial they are constructed with our own 'natural' language in mind.</p>
+			</li>
+			<li>
+				<h3>Speaking your language</h3>
+			</li>
+		</ul>
+
+</section>
+
+
+
+<section class="slide" id="interrupt">
+	<h2>Interrupt</h2>
+		<ul>
+			<li>
+				<h3>Traditional computing: Start to Finish</h3>
+				<p>Pre 1950s, programming computers consisted of writing instructions (scripts) and feeding them to the computer (executing) to run from start to finish. No intervention during this time.</p>
+				<span class='notes'>No intervention until the script has finished.</span>
+			</li>
+			<li>
+				<h3>New paradigm: Interactive Computing</h3>
+				<p>In the 1950s a new paradigm emerged that allowed for scripts to be interrupted and for interaction to occur between the computer and external world.</p>
+			</li>
+			<li>
+				<h3>Peripheral (External) Devices</h3>
+				<p>Keyboards, mice, network cards, microphones, sounds sensors, light sensors, switches, etc</p>
+			</li>
+		</ul>
+
+</section>
+
+
+
+
+<section class="slide" id="concepts">
+
+	<h2>Scripts (Sketches) and Execution</h2>
+		<ul>
+			<li>
+				<h3>Scripts (Sketches)</h3>
+				<p>A text file containing the code, which are the instructions to be followed during <strong>execution</strong>.</p>
+			</li>
+			<li>
+				<h3>Execution / Running</h3>
+				<p>Alone the text file is redundant. We <strong>execute</strong> or <strong>run</strong> these instructions.</p>
+			</li>
+			<li>
+				<h3>Arduino</h3>
+				<p>The Ardunio microcontroller is where the execution occurs. It contains one script (Sketch) and continually executes this for us.</p>
+			</li>
+		</ul>
+
+</section>
+
+
+
+
+<section class="slide" id="comments">
+
+	<h2>Comments</h2>
+	<ul>
+		<li>
+			<h3>Note to self and others</h3>
+			<p>A programmers best friend. Written within a script but completely ignored during execution.</p>
+			<span class='notes'>A footnote. Showing your working. A reminder. A message to others who might encounter your code.</span>
+		</li>
+	</ul>
+
+	<textarea id="code" name="code" class="code" mode="clike" style="display: none;">/* The loop() function below will run continually */
+
+void loop() {
+
+  digitalWrite(13, HIGH);   // set the LED on
+  delay(1000);              // wait for a second
+  digitalWrite(13, LOW);    // set the LED off
+  delay(1000);              // wait for a second
+
+}
+	</textarea>
+
+</section>
+
+
+
+<section class="slide" id="variables">
+
+	<h2>Variables</h2>
+	<span class='notes'>A way to manage the data and values within our scripts and applications.</span>
+	<ul>
+		<li>
+			<h3>Container for a value</h3>
+			<p>A variable contains a chunk of data of specific type.</p>
+			<textarea id="code" name="code" class="code" mode="clike" style="display: none;">int classNoiseLevel = 99;// This will contain an integer (int)
+
+float smallPi = 3.1614;	// This will contain an number with a decimal point (float)
+
+char myMathsGrade = 'F';// This will contain an single character (char)</textarea>
+		</li>
+		<li>
+			<h3>Meaningful name</h3>
+			<p>It should be given a unique and meaningful name to help you identify the data or value stored within. <strong>Usually named as a noun</strong>.</p>
+		</li>
+		<li>
+			<h3>Varying variables</h3>
+			<p>They can and usually do contain changing (varying) data.</p>
+		</li>
+	</ul>
+
+</section>
+
+
+
+<section class="slide" id="variables-arrays">
+
+	<h2>Variables: Arrays</h2>
+	<ul>
+		<li>
+			<h3>Collection of values</h3>
+			<p>A variable that can hold numerous values that are set and accessed by their position in the array.</p>
+		</li>
+		<li>
+			<h3>Square brackets</h3>
+			<p>Identified as an array by the square brackets after name.</p>
+		</li>
+		<li>
+			<h3>Starts from 0</h3>
+			<p>Values in an array are accessed using their position, <strong>which starts from zero</strong>.</p>
+		</li>
+	</ul>
+	<span class='notes'>Square brackets to identify variable as an array. The type of values to be held in array. Array values container in curly brackets and each value defined by a comma. </span>
+	<span class='notes'>0 index.</span>
+
+</section>
+
+<section class="slide" id="variables-arrays-example">
+
+	<h2>Variables: Arrays</h2>
+	<h3>Example: Rainfall in UK 2011</h3>
+
+	<textarea id="code" name="code" class="code" mode="clike" style="display: none;">// The square brackets after the name identify this variable as an array
+
+int rainfallByMonth[] = {95,67,73,62,61,67,57,72,81,94,94,100};
+
+rainfallByMonth[0]; // 95 (Jan)
+
+rainfallByMonth[8]; // 81 (Sep)
+
+rainfallByMonth[11]; // 100 (Dec)
+</textarea>
+
+	<span class='notes'>Square brackets to identify variable as an array. The type of values to be held in array. Array values container in curly brackets and each value defined by a comma. </span>
+	<span class='notes'>0 index.</span>
+</section>
+
+
+<section class="slide" id="function-subroutines">
+
+	<h2>Functions / Subroutines</h2>
+	<ul>
+		<li>
+			<h3>A collection of code</h3>
+			<p>A collection (or block) of code that performs a specific task.</p>
+			<span class='notes'>A way to organise your code. A subprogram or program within a program.</span>
+		</li>
+		<li>
+			<h3>Reusable</h3>
+			<p>Code is usually put into a function so that it can be started (called) several times.</p>
+		</li>
+		<li>
+			<h3>Meaningful name</h3>
+			<p>Like a variable, should be given a unique and meaningful name to help you identify the purpose of the code within. <strong>Usually named as a verb</strong>.</p>
+		</li>
+	</ul>
+<span class='notes'>It is defined in one place and then called in another.</span>
+<span class='notes'>The code is contained within curly braces/brackets.</span>
+
+</section>
+
+
+
+<section class="slide" id="function-subroutines-example">
+
+	<h2>Functions / Subroutines</h2>
+	
+	<ul>
+		<li>
+			<h3>Brackets &amp; Curly Braces</h3>
+			<p>Identified by brackets after function name. The code within is defined by curly braces.</p>
+		</li>
+		<li>
+			<h3>Example</h3>
+	<textarea id="code" name="code" class="code" mode="clike" style="display: none;">/* The function named alarm is defined here */
+void alarm(){
+   // buzz the buzzer at 2500Hz for 500 ms
+   buzz(buzzerOutPin, 2500, 500);
+   delay(1000); // wait a bit between buzzes
+}
+
+/* The function named alarm is called here */
+alarm();</textarea>
+		</li>
+	</ul>
+
+
+<span class='notes'>It is defined in one place and then called in another.</span>
+<span class='notes'>The code is contained within curly braces/brackets.</span>
+</section>
+
+
+
+
+<section class="slide" id="conditionals">
+
+	<h2>Conditionals: if-then-else</h2>
+	<ul>
+		<li>
+			<h3>Controls the flow and ouput of script</h3>
+			<p>Used to control the flow and output of a running script based around the values stored in variables.</p>
+		</li>
+		<li>
+			<h3>Comparing Variables: if() statement</h3>
+			<p>Using the <code>if()</code> statement you compare the values within variables using equal to(<code>==</code>), not equal to(<code>!=</code>), greater than(<code>&gt;</code>) and lesser than(<code>&lt;</code>).</p>
+
+		<li>
+			<p>The expressions within the brackets will be either true or false.</p>
+
+				<textarea id="code" name="code" class="code" mode="clike" style="display: none;">if ( varA == varB )	// if varA is 'equal to' varB
+if ( varC &gt;&nbsp; varD ) 	// if varC is 'greater than' varD
+if ( varE &lt;&nbsp; varF )	// if varE is 'less than' varF
+if ( varG != varH ) 	// if varG is 'not equal to' varH</textarea>
+			</p>
+		</li>
+		<li>
+			<p>If the expression is true then the code after the <code>if()</code> will run. If the expression is false the code after the <code>else</code> will run.</p>
+		</li>
+
+	</ul>
+
+</section>
+
+
+
+<section class="slide" id="conditionals-example">
+	
+	<h2>Conditionals: if-then-else</h2>
+	<h3>Example</h3>
+
+	<textarea id="code" name="code" class="code" mode="javascript" style="display: none;" runnable="true">bioSensorInput = 999;
+if ( bioSensorInput &lt; 900 ) {
+   // The if statement was true 
+   alert('TRUE - Bio sensor input is LESS THAN (&lt;) 900');
+}else{
+   // The if statement was true
+   alert('FALSE - Bio sensor input is GREATER THAN (&gt;) 900');
+}</textarea>
+
+</section>
+
+<section class="slide" id="loops">
+
+	<h2>Loops: for and while</h2>
+	<ul>
+		<li>
+			<h3>Repetition</h3>
+			<p>Allows for code to be executed repeatedly.</p>
+			<textarea id="code" name="code" class="code" mode="javascript" style="display: none;">// Example of a 'for loop' 
+for (int counter = 0; counter &lt; 8; counter++) {
+	// The code here will run 8 times
+}</textarea>
+
+<textarea id="code" name="code" class="code" mode="javascript" style="display: none;">// Example of a 'while loop'
+int counter = 0;
+while(counter&lt;8){
+	// The code here will run 8 times
+	counter++;
+}</textarea>
+		</li>
+		<li>
+			<p>It is common practice to use for loops to iterate through the values in an array.</p>
+			<textarea id="code" name="code" class="code" mode="clike" style="display: none;">// Using a 'for loop' to access array values
+int rainfallForYear = 0;
+int rainfallByMonth[] = {95,67,73,62,61,67,57,72,81,94,94,100};
+for (int counter = 0; counter &lt; 12; counter++) {
+	rainfallForYear = rainfallForYear + rainfallByMonth[counter];
+}</textarea>
+		</li>
+	</ul>
+
+</section>
+
+
+
+<!-- <section class="slide" id="context">
+
+	<h2>Interesting/inspiring use of code</h2>
+	<ul>
+		<li>
+			<p>Might integrate these into other slides if possible.</p>
+		</li>
+
+		<li>
+			<h3>Inpsiring Example 001</h3>
+			<p>OMG!</p>
+		</li>	
+		<li>
+			<h3>Exciting Example 002</h3>
+			<p>OMFG!</p>
+		</li>
+	</ul>
+
+</section> 
+
+
+<section class="slide" id="conclusion">
+
+	<h2>Thoughts on programming</h2>
+	<ul>
+		<li>
+			<h3>Accessible</h3>
+			<p>The resources to learn programming are readily available.</p>
+			<span class='notes'></notes>
+		</li>	
+		<li>
+			<h3>The boundaries of programming</h3>
+			<p>Software (and therefore) programming do not exist in isolation.</p>
+			<span class='notes'>They begin with ideas and are entangled with people, places and things.</notes>
+		</li>
+		<li>
+			<p>There are boundless possiblities for creativity within programming.</p>
+		</li>
+	</ul>
+
+</section> -->
+
+<!-- deck.navigation snippet -->
+<a href="#" class="deck-prev-link" title="Previous">&#8592;</a>
+<a href="#" class="deck-next-link" title="Next">&#8594;</a>
+
+<!-- deck.status snippet -->
+<p class="deck-status">
+	<span class="deck-status-current"></span>
+	/
+	<span class="deck-status-total"></span>
+</p>
+
+<!-- deck.goto snippet -->
+<form action="." method="get" class="goto-form">
+	<label for="goto-slide">Go to slide:</label>
+	<input type="text" name="slidenum" id="goto-slide" list="goto-datalist">
+	<datalist id="goto-datalist"></datalist>
+	<input type="submit" value="Go">
+</form>
+
+<!-- deck.hash snippet -->
+<a href="." title="Permalink to this slide" class="deck-permalink">#</a>
+
+
+<!-- Grab CDN jQuery, with a protocol relative URL; fall back to local if offline -->
+<script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.min.js"></script>
+<script>window.jQuery || document.write('<script src="jquery-1.7.min.js"><\/script>')</script>
+
+<!-- Deck Core and extensions -->
+<script src="core/deck.core.js"></script>
+<script src="extensions/hash/deck.hash.js"></script>
+<script src="extensions/menu/deck.menu.js"></script>
+<script src="extensions/goto/deck.goto.js"></script>
+<script src="extensions/status/deck.status.js"></script>
+<script src="extensions/navigation/deck.navigation.js"></script>
+<script src="extensions/scale/deck.scale.js"></script>
+
+<!-- Base codemiror code -->
+<script src="extensions/codemirror/codemirror.js"></script>
+<!-- html mode (note html mode requires xml, css and javascript) -->
+<script src="extensions/codemirror/mode/xml/xml.js"></script>
+<script src="extensions/codemirror/mode/css/css.js"></script>
+<script src="extensions/codemirror/mode/htmlmixed/htmlmixed.js"></script>
+<script src="extensions/codemirror/mode/javascript/javascript.js"></script>
+<script src="extensions/codemirror/mode/clike/clike.js"></script>
+<!-- Plugin code -->
+<script src="extensions/codemirror/deck.codemirror.js"></script>
+
+<!-- Initialize the deck -->
+<script>
+$(function() {
+	$.deck('.slide');
+});
+</script>
+
+</body>
+</html>
